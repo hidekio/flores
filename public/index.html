@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeria de Flores</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f8f8f8;
+            margin: 0;
+            padding: 0;
+        }
+        .gallery {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            padding: 20px;
+        }
+        .gallery img {
+            width: 200px;
+            height: 200px;
+            border-radius: 10px;
+            transition: transform 0.3s;
+            cursor: pointer;
+        }
+        .gallery img:hover {
+            transform: scale(1.1);
+        }
+        #info {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Galeria de Flores</h1>
+    <div class="gallery" id="gallery">
+        <img src="rossa-removebg-preview.png" alt="Rosa" onclick="mostrarInfo('Rosa', 'A rosa é uma das flores mais populares do mundo, conhecida por sua beleza e perfume.')">
+        <img src="tulipa.png" alt="Tulipa" onclick="mostrarInfo('Tulipa', 'A tulipa é uma flor colorida e vibrante, muito apreciada em jardins e buquês.')">
+        <img src="girassol-removebg-preview.png" alt="Girassol" onclick="mostrarInfo('Girassol', 'O girassol é conhecido por seguir a luz do sol e simbolizar felicidade.')">
+        <img src="orquidea.png" alt="Orquídea" onclick="mostrarInfo('Orquídea', 'As orquídeas são exóticas e têm grande variedade de cores e formatos.')">
+        <img src="margarida-removebg-preview.png" alt="Margarida" onclick="mostrarInfo('Margarida', 'A margarida simboliza pureza e inocência, sendo muito usada em arranjos florais.')">
+        <img src="lirio-removebg-preview.png" alt="Lírio" onclick="mostrarInfo('Lírio', 'O lírio é uma flor elegante e sofisticada, frequentemente associada à paz e espiritualidade.')">
+    </div>
+    <div id="info"></div>
+    <script>
+        function mostrarInfo(nome, descricao) {
+            const infoDiv = document.getElementById('info');
+            infoDiv.innerHTML = `<h2>${nome}</h2><p>${descricao}</p>`;
+            infoDiv.style.display = 'block';
+        }
+    </script>
+</body>
+</html>
